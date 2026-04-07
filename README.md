@@ -20,8 +20,8 @@ OpenFlow rules to minimize flooding and improve network efficiency.
 - **Observation:** Verified that specific rules exist for H1 and H2.
 
 ## Performance Analysis
-- **Latency:** Average ping time was [X] ms.
-- **Throughput:** iPerf measured [X] Gbits/sec.
+- **Latency:** Average ping time was 1.976 ms.
+- **Throughput:** iPerf measured 39.3 Gbits/sec.
 
 ### Topology Setup
 ![Topology Setup](screenshots/Topology.png)
