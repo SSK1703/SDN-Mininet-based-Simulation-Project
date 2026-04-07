@@ -30,7 +30,7 @@ OpenFlow rules to minimize flooding and improve network efficiency.
 ![Controller Setup](screenshots/Connectivity.png)
 
 ### Flow Table (SDN Logic)
-![Flow Tables](screenshots/Flow_table.png)
+![Flow Tables](screenshots/flow_table_entries.png)
 
 ### Performance Results
 ![Performance Result](screenshots/Performance.png)
