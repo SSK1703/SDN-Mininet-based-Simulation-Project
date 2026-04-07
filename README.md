@@ -24,13 +24,13 @@ OpenFlow rules to minimize flooding and improve network efficiency.
 - **Throughput:** iPerf measured [X] Gbits/sec.
 
 ### Topology Setup
-![Topology Setup](screenshots)
+![Topology Setup](screenshots/Topology.png)
 
 ### Controller Activity
-![Controller Setup](screenshots)
+![Controller Setup](screenshots/Connectivity.png)
 
 ### Flow Table (SDN Logic)
-![Flow Tables](screenshots)
+![Flow Tables](screenshots/Flow_table.png)
 
 ### Performance Results
-![Performance Result](screenshots)
+![Performance Result](screenshots/Performance.png)
