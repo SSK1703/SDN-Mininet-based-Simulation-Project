@@ -22,3 +22,15 @@ OpenFlow rules to minimize flooding and improve network efficiency.
 ## Performance Analysis
 - **Latency:** Average ping time was [X] ms.
 - **Throughput:** iPerf measured [X] Gbits/sec.
+
+### Topology Setup
+![Topology Setup](screenshots)
+
+### Controller Activity
+![Controller Setup](screenshots)
+
+### Flow Table (SDN Logic)
+![Flow Tables](screenshots)
+
+### Performance Results
+![Performance Result](screenshots)
