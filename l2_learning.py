@@ -1,4 +1,3 @@
-# Copyright 2011-2012 James McCauley
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +11,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#Submitted by:SHASANK SK(PES2UG24CS460) - SDN Learning Switch Project
 """
 An L2 learning switch.
 
@@ -32,7 +30,9 @@ log = core.getLogger()
 # We don't want to flood immediately when a switch connects.
 # Can be overriden on commandline.
 _flood_delay = 0
- """
+
+class LearningSwitch (object):
+  """
   The learning switch "brain" associated with a single OpenFlow switch.
 
   When we see a packet, we'd like to output it on a port which will
@@ -68,7 +68,7 @@ _flood_delay = 0
   5) Is output port the same as input port?
      Yes:
         5a) Drop packet and similar ones for a while
-6) Install flow table entry in the switch so that this
+  6) Install flow table entry in the switch so that this
      flow goes out the appopriate port
      6a) Send the packet out appropriate port
   """
@@ -101,7 +101,7 @@ _flood_delay = 0
       """ Floods the packet """
       msg = of.ofp_packet_out()
       if time.time() - self.connection.connect_time >= _flood_delay:
-   # Only flood if we've been connected for a little while...
+        # Only flood if we've been connected for a little while...
 
         if self.hold_down_expired is False:
           # Oh yes it is!
@@ -135,7 +135,7 @@ _flood_delay = 0
         msg.hard_timeout = duration[1]
         msg.buffer_id = event.ofp.buffer_id
         self.connection.send(msg)
-    elif event.ofp.buffer_id is not None:
+      elif event.ofp.buffer_id is not None:
         msg = of.ofp_packet_out()
         msg.buffer_id = event.ofp.buffer_id
         msg.in_port = event.port
@@ -171,7 +171,9 @@ _flood_delay = 0
         msg.actions.append(of.ofp_action_output(port = port))
         msg.data = event.ofp # 6a
         self.connection.send(msg)
-  class l2_learning (object):
+
+
+class l2_learning (object):
   """
   Waits for OpenFlow switches to connect and makes them learning switches.
   """
@@ -207,8 +209,6 @@ def launch (transparent=False, hold_down=_flood_delay, ignore = None):
 
   if ignore:
     ignore = ignore.replace(',', ' ').split()
- ignore = set(str_to_dpid(dpid) for dpid in ignore)
+    ignore = set(str_to_dpid(dpid) for dpid in ignore)
 
   core.registerNew(l2_learning, str_to_bool(transparent), ignore)
-
-class LearningSwitch (object):
